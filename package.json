@@ -1,0 +1,23 @@
+{
+  "name": "lifeguide-app",
+  "version": "1.0.0",
+  "description": "生命指南 - 一個中文化的生活指導網站應用程式",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "test": "echo \"暫無測試\" && exit 0"
+  },
+  "keywords": [
+    "生命指南",
+    "life-guide",
+    "中文",
+    "繁體中文",
+    "個人發展",
+    "生活規劃"
+  ],
+  "author": "YiChunLinlifeguidebook",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
