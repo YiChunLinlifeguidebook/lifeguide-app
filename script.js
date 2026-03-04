@@ -1,3 +1,21 @@
+// 確保語言設定為中文並永久保存
+(function() {
+    // 設定語言為繁體中文
+    const preferredLanguage = 'zh-TW';
+
+    // 儲存語言偏好設定到 localStorage
+    localStorage.setItem('preferredLanguage', preferredLanguage);
+
+    // 確保 HTML 標籤的 lang 屬性設定為繁體中文
+    document.documentElement.lang = preferredLanguage;
+
+    // 設定 content-language meta 標籤
+    const contentLanguageMeta = document.querySelector('meta[http-equiv="content-language"]');
+    if (contentLanguageMeta) {
+        contentLanguageMeta.setAttribute('content', preferredLanguage);
+    }
+})();
+
 // 平滑滾動效果
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
