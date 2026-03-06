@@ -16,6 +16,30 @@
     }
 })();
 
+// 行動裝置選單切換
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+    function updateMenuState(isOpen) {
+        navMenu.classList.toggle('open', isOpen);
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
+    }
+
+    menuToggle.addEventListener('click', function() {
+        updateMenuState(!navMenu.classList.contains('open'));
+    });
+
+    // 點擊選單項目後自動關閉選單
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            updateMenuState(false);
+        });
+    });
+}
+
 // 平滑滾動效果
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
