@@ -2,6 +2,7 @@
 const translations = {
     'zh-TW': {
         'logo': '生命指南',
+        'hero.badge': '✨ 生命指南',
         'nav.home': '首頁',
         'nav.about': '關於我們',
         'nav.services': '服務項目',
@@ -52,6 +53,7 @@ const translations = {
     },
     'en': {
         'logo': 'Life Guide',
+        'hero.badge': '✨ Life Guide',
         'nav.home': 'Home',
         'nav.about': 'About Us',
         'nav.services': 'Services',
