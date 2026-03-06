@@ -90,19 +90,19 @@ if (ctaButton) {
 }
 
 // 滾動時導航欄效果
-let lastScroll = 0;
 const header = document.querySelector('header');
+let scrollTicking = false;
 
 window.addEventListener('scroll', function() {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll <= 0) {
-        header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+    if (!scrollTicking) {
+        requestAnimationFrame(function() {
+            header.style.boxShadow = window.scrollY <= 0
+                ? '0 2px 5px rgba(0,0,0,0.1)'
+                : '0 2px 10px rgba(0,0,0,0.2)';
+            scrollTicking = false;
+        });
+        scrollTicking = true;
     }
-
-    lastScroll = currentScroll;
 });
 
 // 卡片動畫效果
@@ -114,8 +114,8 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -124,9 +124,7 @@ const observer = new IntersectionObserver(function(entries) {
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.feature-card, .service-item, .resource-card');
     cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        card.classList.add('animate-on-scroll');
         observer.observe(card);
     });
 });
