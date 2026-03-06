@@ -16,7 +16,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header and Navigation */
+/* 頁首與導航列 */
 header {
     background-color: #2c3e50;
     color: white;
@@ -55,7 +55,7 @@ header {
     color: #3498db;
 }
 
-/* Hero Section */
+/* 英雄區塊 */
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -90,7 +90,7 @@ header {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* About Section */
+/* 關於我們區塊 */
 .about {
     padding: 5rem 0;
     background-color: #f8f9fa;
@@ -137,7 +137,7 @@ header {
     color: #667eea;
 }
 
-/* Services Section */
+/* 服務項目區塊 */
 .services {
     padding: 5rem 0;
 }
@@ -172,7 +172,7 @@ header {
     color: #2c3e50;
 }
 
-/* Resources Section */
+/* 資源中心區塊 */
 .resources {
     padding: 5rem 0;
     background-color: #f8f9fa;
@@ -211,7 +211,7 @@ header {
     color: #667eea;
 }
 
-/* Contact Section */
+/* 聯絡我們區塊 */
 .contact {
     padding: 5rem 0;
 }
@@ -272,7 +272,7 @@ header {
     background-color: #5568d3;
 }
 
-/* Footer */
+/* 頁尾 */
 footer {
     background-color: #2c3e50;
     color: white;
@@ -302,7 +302,7 @@ footer .container {
     color: #3498db;
 }
 
-/* Mobile Menu Toggle */
+/* 行動裝置選單切換 */
 .menu-toggle {
     --menu-toggle-offset: 9.5px;
     display: none;
@@ -337,7 +337,7 @@ footer .container {
     transform: translateY(calc(-1 * var(--menu-toggle-offset))) rotate(-45deg);
 }
 
-/* Responsive Design */
+/* 響應式設計 */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
